@@ -1,0 +1,113 @@
+:root{
+    --my-padding: 0.4rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    color: #fff;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 0.5fr 2fr 1fr 1fr 0.5fr;
+    grid-template-areas: 
+    "header menu menu"
+    "hero hero hero"
+    "main main image"
+    "main main extra"
+    "banner banner banner"
+    ;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header{
+    align-items: center;
+    display: grid;
+    background-color: cornflowerblue;
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+nav{
+    align-items: center;
+    display: grid;
+    background-color: coral;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero{
+    align-items: center;
+    display: grid;
+    background-color: darkkhaki;
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+main{
+    align-items: center;
+    display: grid;
+    background-color: rgb(134, 239, 167);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.image{
+    align-items: center;
+    display: grid;
+    background-color: darkslateblue;
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra{
+    align-items: center;
+    display: grid;
+    background-color: darkred;
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+footer{
+    align-items: center;
+    display: grid;
+    background-color: darkslategray;
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+@media(max-width: 1024px){
+
+    .container{
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        grid-template-rows: 0.5fr 1fr 1.5fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+        ;
+    }
+}
+
+@media(max-width: 480px){
+    .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 2fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header"
+    "menu"
+    "hero"
+    "main"
+    "banner"
+    "extra"
+    "image"
+    ;
+    }
+}
